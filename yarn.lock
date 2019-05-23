@@ -4949,6 +4949,10 @@ react-native-gesture-handler@^1.2.1:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+"react-native-root-check@https://github.com/kristiantoska/react-native-root-check":
+  version "0.0.1"
+  resolved "https://github.com/kristiantoska/react-native-root-check#912a93e0b47a4fd897cd184ee058f83d1a76c8af"
+
 react-native-safe-area-view@^0.14.1:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.4.tgz#1647fa74fd452cb8cee4f47bd08de3829451bf5d"

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 
-import RootCheckGate from './components/RootCheckGate';
+import RootCheckGate from 'react-native-root-check';
+
 import BackgroundCheckGate from './components/BackgroundCheckGate';
 import LaunchScreenAnim from './components/LaunchScreenAnim';
 
@@ -15,6 +16,12 @@ export default class App extends Component {
       return <LaunchScreenAnim onAnimationFinish={() => this.setState({ animation: false })} />;
     }
 
-    return <AppNavigator />;
+    return (
+      <RootCheckGate>
+        <BackgroundCheckGate>
+          <AppNavigator />
+        </BackgroundCheckGate>
+      </RootCheckGate>
+    );
   }
 }
