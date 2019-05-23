@@ -1,35 +1,28 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Dimensions } from 'react-native';
-import LottieView from 'lottie-react-native';
+import { FlatList } from 'react-native';
 
-import RootCheckGate from './RootCheckGate';
-import BackgroundCheckGate from './BackgroundCheckGate';
+import RootCheckGate from './components/RootCheckGate';
+import BackgroundCheckGate from './components/BackgroundCheckGate';
+import LaunchScreenAnim from './components/LaunchScreenAnim';
+import CollapsibleCard from './components/CollapsibleCard';
 
-const { width, height } = Dimensions.get('window');
+const fakeData = new Array(20).fill(0);
 
 export default class App extends Component {
   state = { animation: true };
 
   render() {
-    console.log(require('./splash-animation.json'));
-
     if (this.state.animation) {
-      return (
-        <LottieView
-          autoPlay
-          loop={false}
-          source={require('./splash-animation.json')}
-          style={{ backgroundColor: 'blue' }}
-          onAnimationFinish={() => this.setState({ animation: false })}
-          resizeMode="cover"
-        />
-      );
+      return <LaunchScreenAnim onAnimationFinish={() => this.setState({ animation: false })} />;
     }
 
     return (
-      <View style={{ flex: 1 }}>
-        <View />
-      </View>
+      <FlatList
+        style={{ backgroundColor: 'lightgray' }}
+        keyExtractor={(el, index) => String(index)}
+        data={fakeData}
+        renderItem={() => <CollapsibleCard />}
+      />
     );
   }
 }
