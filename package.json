@@ -11,7 +11,7 @@
     "jail-monkey": "^2.2.0",
     "lottie-react-native": "^2.6.1",
     "react": "16.8.3",
-    "react-native": "0.59.8",
+    "react-native": "0.62.3",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-root-check": "https://github.com/kristiantoska/react-native-root-check",
     "react-navigation": "^3.11.0"
